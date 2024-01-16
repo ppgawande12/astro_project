@@ -1,26 +1,29 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { supabase } from "./client";
-let res = "";
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  console.log(email, password);
+  const [responseMessage, setResponseMessage] = useState("");
 
-    const handleSignup = async (e) => {
-      e.preventDefault(); 
+  const handleSignup = async (e) => {
+    e.preventDefault();
 
-      try {
-        const { data, error } = await supabase.auth.signUp({
-          email: email,
-          password: password,
-        });
-        if (error) throw error;
-        setResult("Check your email for the verification link");
-      } catch (error) {
-        setResult(error.message);
+    try {
+      const { error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+      });
+
+      if (error) {
+        throw error;
       }
-    };
 
+      setResponseMessage("Check your email for a verification link");
+    } catch (error) {
+      setResponseMessage(error.message);
+    }
+  };
 
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -31,12 +34,12 @@ const SignUp = () => {
           alt="Your Company"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Sign in to your account
+          Sign up for an account
         </h2>
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form onSubmit={handleSignup} className="space-y-6" action="#" method="POST">
+        <form onSubmit={handleSignup} className="space-y-6" method="POST">
           <div>
             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
               Email address
@@ -86,11 +89,11 @@ const SignUp = () => {
               type="submit"
               className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Sign in
+              Sign up
             </button>
-            <p>{res}</p>
           </div>
         </form>
+        <p>{responseMessage}</p>
       </div>
     </div>
   );
