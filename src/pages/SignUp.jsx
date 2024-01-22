@@ -34,6 +34,21 @@ const SignUp = () => {
     } catch (error) {
       alert(error);
     }
+    const { data, error: insertError } = await supabase.from("users").upsert(
+      [
+        {
+          firstname: firstName,
+          lastname: lastName,
+          email: email,
+          password: password,
+        },
+      ],
+      { onConflict: ["email"] }
+    );
+
+    if (insertError) {
+      throw insertError;
+    }
   };
 
   return (
