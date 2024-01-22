@@ -1,6 +1,7 @@
 import React from "react";
 import SignUp from "./SignUp";
 import "./Styles/Account.css";
+import { dash } from "./images/dash-mockup.jpg";
 
 function Account() {
   return (
@@ -20,7 +21,7 @@ function Account() {
           <a href="#"> &lt; Back to Home</a>
         </div>
         <div className="leftinner-conteiner">
-          <img src="https://magicainew.codeshastra.dev/images/bg/dash-mockup.jpg" />
+          <img src={dash} />
         </div>
       </div>
     </div>
