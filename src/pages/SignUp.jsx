@@ -7,8 +7,8 @@ import logo from "./images/logo.png";
 import authBg from "./images/bg-auth.jpg";
 import dashMockup from "./images/dash-mockup.jpg";
 
-const SignUp = () => {
-    console.log(Deno.env.get("PASSWORD"));
+const SignUp = (pass) => {
+   console.log(pass)
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
