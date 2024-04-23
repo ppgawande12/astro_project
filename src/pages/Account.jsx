@@ -6,6 +6,7 @@ import "./Styles/Account.css";
 import { supabase } from "./client";
 
 function Account() {
+  console.log(Deno.env.get("PASSWORD"));
   return (
     <div className="main-container">
       <div className="left-container">
