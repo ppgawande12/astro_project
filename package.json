@@ -8,7 +8,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview",
+  "preview": "deno run -A --unstable ./dist/server/entry.mjs",
     "astro": "astro"
   },
   "dependencies": {
