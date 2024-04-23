@@ -1,6 +1,7 @@
 ---
 import  SignUp  from "./SignUp.jsx";
 import "./styles.css"
+const password = Deno.env.get("PASSWORD")
 ---
 
 <html lang="en">
@@ -13,6 +14,6 @@ import "./styles.css"
 	</head>
 	<body>
 		
-		<SignUp client:load/>
+		<SignUp pass={password} client:load/>
 	</body>
 </html>
