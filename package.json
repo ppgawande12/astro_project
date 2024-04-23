@@ -3,16 +3,16 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-     "dev": "deno run -A --unstable npm:astro dev",
- "start": "deno run -A --unstable npm:astro dev",
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "deno run -A --unstable npm:astro dev",
+    "start": "deno run -A --unstable npm:astro dev",
     "build": "astro check && astro build",
-  "preview": "deno run -A --unstable ./dist/server/entry.mjs",
-    "astro": "astro"
+    "preview": "deno run -A --unstable ./dist/server/entry.mjs",
+    "astro": "astro",
+    "format": "deno fmt && prettier --write ."
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/deno": "^5.0.1",
     "@astrojs/react": "^3.0.9",
     "@supabase/supabase-js": "^2.39.3",
     "@types/react": "^18.2.48",
