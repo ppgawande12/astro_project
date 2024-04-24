@@ -18,6 +18,7 @@
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.1.2",
+      "dotenv": "^16.4.5",
     "autoprefixer": "^10.4.16",
     "flowbite-react": "^0.7.2",
     "postcss": "^8.4.33",
