@@ -1,11 +1,11 @@
 ---
 import dotenv from 'dotenv';
 dotenv.config();
-
+import { Deno } from "https://deno.land/std@0.115.0/mod.ts";
 import deno from '@astrojs/deno';
 import  SignUp  from "./SignUp.jsx";
 import "./styles.css"
-const password =import.meta.env.PASSWORD;
+const password =Deno.env.get("PASSWORD");
 
 ---
 
